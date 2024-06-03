@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 
+import Table from '@components/Table/Table';
+ 
 export default function Home() {
   const [data, setData] = useState< MetricsData[] | null>(null)
   const [isLoading, setLoading] = useState(true)
@@ -21,6 +23,7 @@ export default function Home() {
  
   return (
     <main>
+      <Table data={data} />
     </main>
   )
 }

@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table should render correctly 1`] = `
+<DocumentFragment>
+  <table
+    class="sc-c61c4d4c-0 jlRsUz"
+  >
+    <thead
+      class="sc-c61c4d4c-1 dFtGRy"
+    >
+      <tr>
+        <th>
+          Label
+        </th>
+        <th>
+          Value
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Category
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="sc-c61c4d4c-2 fzlPXQ"
+      >
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Label"
+        >
+          oee
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Value"
+        >
+          68%
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Description"
+        >
+          The overall equipment efficiency in %
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Category"
+        >
+          <span
+            class="sc-a9c9562-0 jevWuD"
+            label="efficiency"
+          >
+            efficiency
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="sc-c61c4d4c-2 fzlPXQ"
+      >
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Label"
+        >
+          Speed loss
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Value"
+        >
+          -10.5
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Description"
+        >
+          The line speed loss
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Category"
+        >
+          <span
+            class="sc-a9c9562-0 jevWuD"
+            label="efficiency"
+          >
+            efficiency
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="sc-c61c4d4c-2 fzlPXQ"
+      >
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Label"
+        >
+          Cleaning in shift
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Value"
+        >
+          2280 s
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Description"
+        >
+          Time spent (in seconds) cleaning the machines during the last shift
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Category"
+        >
+          <span
+            class="sc-a9c9562-0 fGmmfe"
+            label="shift"
+          >
+            shift
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="sc-c61c4d4c-2 fzlPXQ"
+      >
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Label"
+        >
+          Shift duration
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Value"
+        >
+          8 h
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Description"
+        >
+          Last shift duration in hours
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Category"
+        >
+          <span
+            class="sc-a9c9562-0 fGmmfe"
+            label="shift"
+          >
+            shift
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="sc-c61c4d4c-2 fzlPXQ"
+      >
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Label"
+        >
+          -
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Value"
+        >
+          -
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Description"
+        >
+          -
+        </td>
+        <td
+          class="sc-c61c4d4c-3 fuznHB"
+          data-label="Category"
+        >
+          -
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
