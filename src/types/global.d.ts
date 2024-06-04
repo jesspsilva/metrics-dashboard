@@ -26,4 +26,9 @@ declare global {
   interface StatsData {
     [key: string]: StatsItem[];
   }
+
+  interface ChartData {
+    name: string;
+    value: number;
+  }
 }
