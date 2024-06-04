@@ -49,6 +49,7 @@
   --dark-red: #B54747;
   --dark-gray: #7F8189;
   --white: #fff;
+  --neutral-dark: #3D3C42;
 }
 
 * {
@@ -81,4 +82,5 @@ a {
 main {
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: 40px 0;
 }
