@@ -3,9 +3,12 @@
 exports[`Badge should render correctly 1`] = `
 <DocumentFragment>
   .c0 {
+  display: inline-block;
+  min-width: 80px;
   padding: 5px 12px;
   border-radius: 5px;
   font-size: 0.9rem;
+  text-align: center;
   text-transform: capitalize;
   color: var(--dark-green);
   background-color: var(--light-green);

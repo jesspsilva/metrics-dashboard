@@ -3,54 +3,62 @@
 exports[`Table should render correctly 1`] = `
 <DocumentFragment>
   <table
-    class="sc-c61c4d4c-0 jlRsUz"
+    class="sc-d4ed3cbc-0 bUVcxf"
   >
     <thead
-      class="sc-c61c4d4c-1 dFtGRy"
+      class="sc-d4ed3cbc-1 ixRaws"
     >
       <tr>
-        <th>
+        <th
+          class="sc-d4ed3cbc-2 dvbTPa"
+        >
           Label
         </th>
-        <th>
+        <th
+          class="sc-d4ed3cbc-2 dvbTPa"
+        >
           Value
         </th>
-        <th>
+        <th
+          class="sc-d4ed3cbc-2 dvbTPa"
+        >
           Description
         </th>
-        <th>
+        <th
+          class="sc-d4ed3cbc-2 dvbTPa"
+        >
           Category
         </th>
       </tr>
     </thead>
     <tbody>
       <tr
-        class="sc-c61c4d4c-2 fzlPXQ"
+        class="sc-d4ed3cbc-3 beUnFq"
       >
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Label"
         >
           oee
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Value"
         >
           68%
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Description"
         >
           The overall equipment efficiency in %
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Category"
         >
           <span
-            class="sc-a9c9562-0 jevWuD"
+            class="sc-37c863ca-0 gbrahB"
             label="efficiency"
           >
             efficiency
@@ -58,32 +66,32 @@ exports[`Table should render correctly 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-c61c4d4c-2 fzlPXQ"
+        class="sc-d4ed3cbc-3 beUnFq"
       >
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Label"
         >
           Speed loss
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Value"
         >
           -10.5
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Description"
         >
           The line speed loss
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Category"
         >
           <span
-            class="sc-a9c9562-0 jevWuD"
+            class="sc-37c863ca-0 gbrahB"
             label="efficiency"
           >
             efficiency
@@ -91,32 +99,32 @@ exports[`Table should render correctly 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-c61c4d4c-2 fzlPXQ"
+        class="sc-d4ed3cbc-3 beUnFq"
       >
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Label"
         >
           Cleaning in shift
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Value"
         >
           2280 s
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Description"
         >
           Time spent (in seconds) cleaning the machines during the last shift
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Category"
         >
           <span
-            class="sc-a9c9562-0 fGmmfe"
+            class="sc-37c863ca-0 oekro"
             label="shift"
           >
             shift
@@ -124,32 +132,32 @@ exports[`Table should render correctly 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-c61c4d4c-2 fzlPXQ"
+        class="sc-d4ed3cbc-3 beUnFq"
       >
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Label"
         >
           Shift duration
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Value"
         >
           8 h
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Description"
         >
           Last shift duration in hours
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Category"
         >
           <span
-            class="sc-a9c9562-0 fGmmfe"
+            class="sc-37c863ca-0 oekro"
             label="shift"
           >
             shift
@@ -157,28 +165,28 @@ exports[`Table should render correctly 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-c61c4d4c-2 fzlPXQ"
+        class="sc-d4ed3cbc-3 beUnFq"
       >
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Label"
         >
           -
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Value"
         >
           -
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Description"
         >
           -
         </td>
         <td
-          class="sc-c61c4d4c-3 fuznHB"
+          class="sc-d4ed3cbc-4 dUBKYz"
           data-label="Category"
         >
           -
