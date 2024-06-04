@@ -50,6 +50,8 @@
   --dark-gray: #7F8189;
   --white: #fff;
   --neutral-dark: #3D3C42;
+  --success: #28A745;
+  --danger: #DC3545;
 }
 
 * {
@@ -69,9 +71,6 @@ body {
   color: rgb(var(--foreground-rgb));
   background: var(--background);
 
-  @media (max-width: 768px) {
-    background: var(--white);
-  }
 }
 
 a {
@@ -83,4 +82,8 @@ main {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 40px 0;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 }

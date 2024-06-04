@@ -1,27 +1,7 @@
 import styled from "styled-components";
 
 import Badge from "@components/Badge/Badge";
-
-const formatNumber = (value: number, type: MetricsType): string => {
-	switch (type.toLowerCase()) {
-		case "number":
-			return new Intl.NumberFormat().format(value);
-		case "percentage":
-			return new Intl.NumberFormat("pt-PT", { style: "percent" }).format(value);
-		case "secs":
-			return new Intl.NumberFormat("pt-PT", {
-				style: "unit",
-				unit: "second",
-			}).format(value);
-		case "hours":
-			return new Intl.NumberFormat("pt-PT", {
-				style: "unit",
-				unit: "hour",
-			}).format(value);
-		default:
-			return value.toString();
-	}
-};
+import { formatNumber } from "@/app/utils/format-number";
 
 const TableWrapper = styled.table`
 	width: 100%;
@@ -61,6 +41,7 @@ const TableRow = styled.tr`
 
 		&:not(:last-of-type) {
 			margin-bottom: 4rem;
+			background: var(--white);
 		}
 	}
 `;

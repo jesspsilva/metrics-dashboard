@@ -1,9 +1,11 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import styled from "styled-components";
+import { formatNumber } from "@/app/utils/format-number";
 
 import Table from "@components/Table/Table";
 import Header from "@components/Header/Header";
+import Overview from "@components/Overview/Overview";
 
 const TableWrapper = styled.div`
 	margin: 20px 0;
@@ -42,6 +44,27 @@ export default function Home() {
 		[data, selectedCategory]
 	);
 
+	const statsData = useMemo(
+		() =>
+			data
+				? Object.groupBy(
+						data.map(({ label, value, type, category }) => ({
+							label,
+							value: formatNumber(value, type),
+							category,
+							statType:
+								category === "downtime"
+									? "danger"
+									: type === "percentage" && value > 0.6
+									? "success"
+									: "default",
+						})),
+						({ category }) => category
+				  )
+				: ({} as StatsData),
+		[data]
+	);
+
 	useEffect(() => {
 		fetch("/data.json")
 			.then((response) => response.json())
@@ -74,6 +97,7 @@ export default function Home() {
 				onChange={handleSelectChange}
 				data-testid="table-header"
 			/>
+			<Overview data={statsData} />
 			<TableWrapper>
 				<Table data={filteredData} />
 				<TableFooter>
