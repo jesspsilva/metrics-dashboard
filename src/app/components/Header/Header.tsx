@@ -9,7 +9,7 @@ const HeaderStyled = styled.header`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 0 40px;
+    padding: 20px 0;
 
     > * {
       width: 100%;
@@ -43,6 +43,10 @@ const SelectWrapper = styled.div`
 
     input {
       text-transform: capitalize;
+    }
+
+    @media (max-width: 640px) {
+      min-width: 100%;
     }
   }
 `;

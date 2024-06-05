@@ -3,18 +3,18 @@
 exports[`Header should render correctly 1`] = `
 <DocumentFragment>
   <header
-    class="sc-748d1ee5-0 EfACe"
+    class="sc-7923e1a6-0 xZGJt"
   >
     <h1
-      class="sc-748d1ee5-1 ejQsuG"
+      class="sc-7923e1a6-1 btXmPt"
     >
       Metrics
     </h1>
     <div
-      class="sc-748d1ee5-2 atquT"
+      class="sc-7923e1a6-2 hJPTxg"
     >
       <p
-        class="sc-748d1ee5-3 fkkbPT"
+        class="sc-7923e1a6-3 iQtwZQ"
         id="category-label"
       >
         Select a category

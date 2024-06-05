@@ -11,21 +11,24 @@ import ChartsWrapper from "@/app/components/ChartsWrapper/ChartsWrapper";
 const MetricsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 20px;
 
   margin: 20px 0;
 
-  .data-table {
-    flex: 1;
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     gap: 40px;
+
+    > * {
+      width: 100%;
+    }
   }
 `;
 
-const MetricsCard = styled.div`
+const TableCard = styled.div`
+  flex: 1;
+
   @media (min-width: 768px) {
     padding: 40px;
 
@@ -33,18 +36,27 @@ const MetricsCard = styled.div`
     border-radius: 5px;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.05);
   }
+`;
 
-  &.charts {
+const ChartsCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  > div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 80px;
     min-width: 390px;
 
-    padding: 40px;
+    padding: 20px;
     background: var(--white);
     border-radius: 5px;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.05);
+
+    @media (max-width: 1024px) {
+      min-width: 100%;
+    }
   }
 `;
 
@@ -135,24 +147,24 @@ export default function Home() {
       <Header
         categories={uniqueCategories}
         selectedCategory={selectedCategory}
-        onChange={(value) => setSelectedCategory(value)}
+        onChange={(value) => changeFilters(value, "categories")}
         data-testid="table-header"
       />
-      <Overview data={statsData} />
+      {/* <Overview data={statsData} /> */}
       <MetricsWrapper>
-        <MetricsCard className="charts">
+        <ChartsCard>
           <ChartsWrapper
             data={data}
             category={selectedCategory}
             onChange={(value, type) => changeFilters(String(value), type)}
           />
-        </MetricsCard>
-        <MetricsCard className="data-table">
+        </ChartsCard>
+        <TableCard>
           <Table data={filteredData} />
           <TableFooter>
             Showing data {filteredData.length} of {data.length}
           </TableFooter>
-        </MetricsCard>
+        </TableCard>
       </MetricsWrapper>
     </main>
   );
