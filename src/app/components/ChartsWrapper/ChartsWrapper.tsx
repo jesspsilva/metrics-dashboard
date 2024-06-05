@@ -1,6 +1,11 @@
 import { useMemo } from "react";
-import { formatNumber } from "@/app/utils/format-number";
+import {
+  formatNumber,
+  fromHoursToMinutes,
+  fromSecsToMinutes,
+} from "@/app/utils/format-number";
 import { getCategoryColor } from "@/app/utils/categories-colors";
+import { filterDataByCategory } from "@/app/utils/filter-data-by-category";
 
 import DonutChart from "@components/DonutChart/DonutChart";
 import ProgressCircle from "@components/ProgressCircle/ProgressCircle";
@@ -65,17 +70,7 @@ export default function ChartsWrapper({
     [data],
   );
 
-  const shiftData = useMemo(
-    () =>
-      data
-        .filter((item) => item.category === "shift")
-        .map((item) => ({
-          name: item.label,
-          value: item.value,
-          type: item.type,
-        })),
-    [data],
-  );
+  const shiftData = useMemo(() => filterDataByCategory(data, "shift"), [data]);
 
   const shiftChartData = useMemo(() => {
     const shiftDuration =
@@ -87,8 +82,8 @@ export default function ChartsWrapper({
       shiftData.find((item) => item.name.toLowerCase().includes("cleaning"))
         ?.value || 0;
 
-    const shiftHoursToMinutes = Math.floor(shiftDuration * 60);
-    const cleaningSecondsToMinutes = Math.floor((cleaningTime % 3600) / 60);
+    const shiftHoursToMinutes = fromHoursToMinutes(shiftDuration);
+    const cleaningSecondsToMinutes = fromSecsToMinutes(cleaningTime);
 
     return [
       {
