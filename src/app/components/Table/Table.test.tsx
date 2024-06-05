@@ -1,50 +1,7 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Table from "./Table";
-
-const data = [
-  {
-    id: "oee",
-    label: "oee",
-    value: 0.68,
-    type: "percentage",
-    description: "The overall equipment efficiency in %",
-    category: "efficiency",
-  },
-  {
-    id: "sl",
-    label: "Speed loss",
-    value: -10.5,
-    type: "number",
-    description: "The line speed loss",
-    category: "efficiency",
-  },
-  {
-    id: "cln_shift",
-    label: "Cleaning in shift",
-    value: 2280,
-    type: "secs",
-    description:
-      "Time spent (in seconds) cleaning the machines during the last shift",
-    category: "shift",
-  },
-  {
-    id: "shift_duration",
-    label: "Shift duration",
-    value: 8,
-    type: "hours",
-    description: "Last shift duration in hours",
-    category: "shift",
-  },
-  {
-    id: "no_value",
-    label: "",
-    value: null,
-    type: "",
-    description: "",
-    category: "",
-  },
-] as MetricsData[];
+import { metricsData as data } from "@/app/utils/__mocks__/tests-data";
 
 describe("Table", () => {
   it("should render correctly", () => {

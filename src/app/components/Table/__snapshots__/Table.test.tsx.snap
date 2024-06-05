@@ -58,7 +58,7 @@ exports[`Table should render correctly 1`] = `
           data-label="Category"
         >
           <span
-            class="sc-fea6eeed-0 jmkfQA bg-emerald-200 border-emerald-600 text-emerald-800"
+            class="sc-fea6eeed-0 jmkfQA bg-emerald-200 border-emerald-800 text-emerald-800"
             label="efficiency"
           >
             efficiency
@@ -91,7 +91,7 @@ exports[`Table should render correctly 1`] = `
           data-label="Category"
         >
           <span
-            class="sc-fea6eeed-0 jmkfQA bg-emerald-200 border-emerald-600 text-emerald-800"
+            class="sc-fea6eeed-0 jmkfQA bg-emerald-200 border-emerald-800 text-emerald-800"
             label="efficiency"
           >
             efficiency
@@ -190,6 +190,72 @@ exports[`Table should render correctly 1`] = `
           data-label="Category"
         >
           -
+        </td>
+      </tr>
+      <tr
+        class="sc-de9c0f69-3 dLMrcw"
+      >
+        <td
+          class="sc-de9c0f69-4 kqUsCt"
+          data-label="Label"
+        >
+          Unexplained downtime
+        </td>
+        <td
+          class="sc-de9c0f69-4 kqUsCt"
+          data-label="Value"
+        >
+          180 s
+        </td>
+        <td
+          class="sc-de9c0f69-4 kqUsCt"
+          data-label="Description"
+        >
+          The downtime (in seconds) caused by undocumented reasons
+        </td>
+        <td
+          class="sc-de9c0f69-4 kqUsCt"
+          data-label="Category"
+        >
+          <span
+            class="sc-fea6eeed-0 jmkfQA bg-red-200 border-red-800 text-red-800"
+            label="downtime"
+          >
+            downtime
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="sc-de9c0f69-3 dLMrcw"
+      >
+        <td
+          class="sc-de9c0f69-4 kqUsCt"
+          data-label="Label"
+        >
+          Mechanical problems
+        </td>
+        <td
+          class="sc-de9c0f69-4 kqUsCt"
+          data-label="Value"
+        >
+          1210 s
+        </td>
+        <td
+          class="sc-de9c0f69-4 kqUsCt"
+          data-label="Description"
+        >
+          The downtime (in seconds) caused by mechanical problems
+        </td>
+        <td
+          class="sc-de9c0f69-4 kqUsCt"
+          data-label="Category"
+        >
+          <span
+            class="sc-fea6eeed-0 jmkfQA bg-red-200 border-red-800 text-red-800"
+            label="downtime"
+          >
+            downtime
+          </span>
         </td>
       </tr>
     </tbody>

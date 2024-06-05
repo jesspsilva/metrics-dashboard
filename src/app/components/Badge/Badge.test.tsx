@@ -16,7 +16,7 @@ describe("Badge", () => {
       const badge = container.firstChild;
       expect(badge?.textContent).toBe("efficiency");
       expect(badge).toHaveClass(
-        "bg-emerald-200 border-emerald-600 text-emerald-800",
+        "bg-emerald-200 border-emerald-800 text-emerald-800",
       );
     });
   });

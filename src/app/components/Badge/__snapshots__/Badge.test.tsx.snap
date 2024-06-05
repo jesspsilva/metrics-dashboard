@@ -14,7 +14,7 @@ exports[`Badge should render correctly 1`] = `
 }
 
 <span
-    class="c0 bg-emerald-200 border-emerald-600 text-emerald-800"
+    class="c0 bg-emerald-200 border-emerald-800 text-emerald-800"
     label="efficiency"
   >
     efficiency

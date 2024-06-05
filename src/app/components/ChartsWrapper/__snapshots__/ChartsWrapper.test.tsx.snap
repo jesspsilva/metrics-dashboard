@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChartsWrapper should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="chart efficiency-charts"
+    data-testid="efficiency-charts"
+  >
+    <div
+      class="sc-bc09e72-0 kPbMxn"
+    >
+      <h2
+        class="sc-bc09e72-1 gDcwJS"
+      >
+        Equipment Efficiency
+      </h2>
+      <div
+        class="tremor-ProgressBar-root flex flex-col items-center justify-center"
+      >
+        <svg
+          class="transform -rotate-90"
+          height="160"
+          viewBox="0 0 160 160"
+          width="160"
+        >
+          <circle
+            class="transition-colors ease-linear stroke-emerald-500 dark:stroke-emerald-500 opacity-20 dark:opacity-25"
+            cx="80"
+            cy="80"
+            fill="transparent"
+            r="73"
+            stroke=""
+            stroke-linecap="round"
+            stroke-width="14"
+          />
+          <circle
+            class="stroke-emerald-500 dark:stroke-emerald-500 transition-all duration-300 ease-in-out"
+            cx="80"
+            cy="80"
+            fill="transparent"
+            r="73"
+            stroke=""
+            stroke-dasharray="458.6725274241098 458.6725274241098"
+            stroke-dashoffset="146.7752087757151"
+            stroke-linecap="round"
+            stroke-width="14"
+          />
+        </svg>
+        <div
+          class="absolute flex"
+        >
+          <span
+            class="fill-tremor-content-emphasis"
+          >
+            68%
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-b143385c-0 jNqabe"
+    >
+      <h2
+        class="sc-b143385c-1 mKzdD"
+      >
+        Loss parameters distribution
+      </h2>
+      <div
+        class="w-full h-80 mt-6"
+      >
+        <div
+          class="h-full w-full"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
