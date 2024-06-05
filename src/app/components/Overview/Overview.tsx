@@ -142,7 +142,7 @@ export default function Overview({ data }: { data: MetricsData[] }) {
   }, [efficiencyData]);
 
   return (
-    <OverviewWrapper>
+    <OverviewWrapper data-testid="overview">
       <DataCard
         decoration="top"
         decorationColor={

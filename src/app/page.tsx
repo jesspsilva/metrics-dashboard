@@ -141,7 +141,7 @@ export default function Home() {
             onChange={(value, type) => changeFilters(String(value), type)}
           />
         </ChartsCard>
-        <TableCard>
+        <TableCard data-testid="table">
           <Table data={filteredData} />
           <TableFooter>
             Showing data {filteredData.length} of {data.length}
