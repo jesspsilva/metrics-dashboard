@@ -3,7 +3,7 @@ export {};
 declare global {
   type Category = "efficiency" | "shift" | "downtime";
 
-  type MetricsType = "number" | "percentage" | "secs" | "hours";
+  type MetricsType = "number" | "percentage" | "secs" | "hours" | "minutes";
 
   type StatsType = "success" | "danger" | "default";
 
@@ -34,5 +34,10 @@ declare global {
   interface ChartData {
     name: string;
     value: number;
+  }
+
+  interface BarChartData {
+    name: string;
+    [key: string]: number | string;
   }
 }
