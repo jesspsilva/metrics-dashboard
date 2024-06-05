@@ -21,14 +21,16 @@ const H2 = styled.h2`
 export default function ProgressCircle({
   value,
   title,
+  color,
 }: {
   value: number;
   title?: string;
+  color: string;
 }) {
   return (
     <ChartWrapper>
       {title && <H2>{title}</H2>}
-      <Chart value={value} size="xl" strokeWidth={14}>
+      <Chart value={value} size="xl" strokeWidth={14} color={color}>
         <span className="fill-tremor-content-emphasis">{value}%</span>
       </Chart>
     </ChartWrapper>

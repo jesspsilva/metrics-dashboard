@@ -10,13 +10,11 @@ exports[`Badge should render correctly 1`] = `
   font-size: 0.9rem;
   text-align: center;
   text-transform: capitalize;
-  color: var(--dark-green);
-  background-color: var(--light-green);
-  border: 1px solid var(--dark-green);
+  border: 1px solid;
 }
 
 <span
-    class="c0"
+    class="c0 bg-emerald-200 border-emerald-600 text-emerald-800"
     label="efficiency"
   >
     efficiency

@@ -1,33 +1,5 @@
+import { getCategoryColor } from "@/app/utils/categories-colors";
 import styled from "styled-components";
-
-const getBadgeColors = (label: string) => {
-  switch (label.toLowerCase()) {
-    case "efficiency":
-      return {
-        backgroundColor: "var(--light-green)",
-        border: "var(--dark-green)",
-        color: "var(--dark-green)",
-      };
-    case "shift":
-      return {
-        backgroundColor: "var(--light-blue)",
-        border: "var(--dark-blue)",
-        color: "var(--dark-blue)",
-      };
-    case "downtime":
-      return {
-        backgroundColor: "var(--light-red)",
-        border: "var(--dark-red)",
-        color: "var(--dark-red)",
-      };
-    default:
-      return {
-        backgroundColor: "var(--light-gray)",
-        border: "var(--dark-gray)",
-        color: "var(--dark-gray)",
-      };
-  }
-};
 
 interface BadgeProps {
   label: string;
@@ -41,11 +13,18 @@ const BadgeWrapper = styled.span<BadgeProps>`
   font-size: 0.9rem;
   text-align: center;
   text-transform: capitalize;
-  color: ${({ label }) => getBadgeColors(label).color};
-  background-color: ${({ label }) => getBadgeColors(label).backgroundColor};
-  border: 1px solid ${({ label }) => getBadgeColors(label).border};
+  border: 1px solid;
 `;
 
 export default function Badge({ label }: BadgeProps) {
-  return <BadgeWrapper label={label}>{label}</BadgeWrapper>;
+  const colors = getCategoryColor(label);
+
+  return (
+    <BadgeWrapper
+      label={label}
+      className={`bg-${colors.backgroundColor} border-${colors.border} text-${colors.color}`}
+    >
+      {label}
+    </BadgeWrapper>
+  );
 }

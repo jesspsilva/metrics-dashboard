@@ -31,6 +31,7 @@ export default function DonutChart({
   data,
   onChange,
   variant = "donut",
+  colors,
   type = "number",
   title,
 }: {
@@ -52,9 +53,11 @@ export default function DonutChart({
         category="value"
         className="w-80"
         valueFormatter={(value) => formatNumber(value, type)}
+        colors={colors}
       />
       <LegendWrapper
         categories={data.map((item) => item.name)}
+        colors={colors}
         className="mx-auto"
       />
     </ChartWrapper>

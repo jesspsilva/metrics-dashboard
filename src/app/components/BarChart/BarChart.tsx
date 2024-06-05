@@ -23,14 +23,14 @@ export default function BarChart({
   data,
   onChange,
   title,
-  type = "number",
   categories,
+  colors,
 }: {
   data: BarChartData[];
   onChange: (v: string) => void;
   title?: string;
-  type?: MetricsType;
   categories: string[];
+  colors: string[];
 }) {
   return (
     <ChartWrapper>
@@ -42,6 +42,7 @@ export default function BarChart({
         yAxisWidth={48}
         className="mt-6"
         onValueChange={(v) => onChange(v && v.name ? String(v.name) : "")}
+        colors={colors}
       />
     </ChartWrapper>
   );

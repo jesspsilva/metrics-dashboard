@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { formatNumber } from "@/app/utils/format-number";
+import { getCategoryColor } from "@/app/utils/categories-colors";
 
 import DonutChart from "@components/DonutChart/DonutChart";
 import ProgressCircle from "@components/ProgressCircle/ProgressCircle";
@@ -19,10 +20,11 @@ export default function ChartsWrapper({
       data
         ? data
             .filter((item) => item.category === "downtime")
-            .map((item) => ({
+            .map((item, index) => ({
               name: item.label,
               value: item.value,
               type: item.type,
+              color: `${getCategoryColor("downtime").baseColor}-${200 + index * 600}`,
             }))
         : [],
     [data],
@@ -43,6 +45,7 @@ export default function ChartsWrapper({
     return Object.entries(count).map(([category, itemCount]) => ({
       name: category,
       value: itemCount,
+      color: getCategoryColor(category).chartColor,
     }));
   }, [data]);
 
@@ -91,22 +94,27 @@ export default function ChartsWrapper({
       {
         name: "Cleaning",
         value: cleaningSecondsToMinutes,
+        color: `${getCategoryColor("shift").baseColor}-200`,
       },
       {
         name: "Other tasks",
         value: shiftHoursToMinutes - cleaningSecondsToMinutes,
+        color: `${getCategoryColor("shift").baseColor}-800`,
       },
     ];
   }, [shiftData]);
 
   return (
     <>
-      <DonutChart
-        variant="pie"
-        data={categoryCounts}
-        onChange={(value) => onChange(value, "categories")}
-        title="Categories Distribution"
-      />
+      {category.toLowerCase() === "all" && (
+        <DonutChart
+          variant="pie"
+          data={categoryCounts}
+          colors={categoryCounts.map((item) => item.color)}
+          onChange={(value) => onChange(value, "categories")}
+          title="Categories Distribution"
+        />
+      )}
 
       {category.toLowerCase() === "downtime" && (
         <DonutChart
@@ -114,6 +122,7 @@ export default function ChartsWrapper({
           onChange={onChange}
           type={downtimeData[0].type}
           title="Downtime Distribution"
+          colors={downtimeData.map((item) => item.color)}
         />
       )}
 
@@ -122,12 +131,14 @@ export default function ChartsWrapper({
           <ProgressCircle
             value={equipmentEfficiency * 100}
             title="Equipment Efficiency"
+            color={getCategoryColor("efficiency").baseColor}
           />
           <BarChart
             data={efficiencyData}
-            title="Equipment Efficiency"
+            title="Loss parameters distribution"
             onChange={onChange}
             categories={["Loss Value"]}
+            colors={[getCategoryColor("efficiency").baseColor]}
           />
         </>
       )}
@@ -146,6 +157,7 @@ export default function ChartsWrapper({
             }}
             type="minutes"
             title="Distribution of tasks during the shift"
+            colors={shiftChartData.map((item) => item.color)}
           />
         </>
       )}

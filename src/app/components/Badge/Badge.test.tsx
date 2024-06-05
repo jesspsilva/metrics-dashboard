@@ -15,9 +15,9 @@ describe("Badge", () => {
       const { container } = render(<Badge label="efficiency" />);
       const badge = container.firstChild;
       expect(badge?.textContent).toBe("efficiency");
-      expect(badge).toHaveStyleRule("background-color", "var(--light-green)");
-      expect(badge).toHaveStyleRule("border", "1px solid var(--dark-green)");
-      expect(badge).toHaveStyleRule("color", "var(--dark-green)");
+      expect(badge).toHaveClass(
+        "bg-emerald-200 border-emerald-600 text-emerald-800",
+      );
     });
   });
 
@@ -26,9 +26,7 @@ describe("Badge", () => {
       const { container } = render(<Badge label="shift" />);
       const badge = container.firstChild;
       expect(badge?.textContent).toBe("shift");
-      expect(badge).toHaveStyleRule("background-color", "var(--light-blue)");
-      expect(badge).toHaveStyleRule("border", "1px solid var(--dark-blue)");
-      expect(badge).toHaveStyleRule("color", "var(--dark-blue)");
+      expect(badge).toHaveClass("bg-sky-200 border-sky-800 text-sky-800");
     });
   });
 
@@ -37,20 +35,7 @@ describe("Badge", () => {
       const { container } = render(<Badge label="downtime" />);
       const badge = container.firstChild;
       expect(badge?.textContent).toBe("downtime");
-      expect(badge).toHaveStyleRule("background-color", "var(--light-red)");
-      expect(badge).toHaveStyleRule("border", "1px solid var(--dark-red)");
-      expect(badge).toHaveStyleRule("color", "var(--dark-red)");
-    });
-  });
-
-  describe("when is any other label", () => {
-    it("should render the correct label and styles", async () => {
-      const { container } = render(<Badge label="unknown" />);
-      const badge = container.firstChild;
-      expect(badge?.textContent).toBe("unknown");
-      expect(badge).toHaveStyleRule("background-color", "var(--light-gray)");
-      expect(badge).toHaveStyleRule("border", "1px solid var(--dark-gray)");
-      expect(badge).toHaveStyleRule("color", "var(--dark-gray)");
+      expect(badge).toHaveClass("bg-red-200 border-red-800 text-red-800");
     });
   });
 });
