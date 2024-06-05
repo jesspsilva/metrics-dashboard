@@ -27,9 +27,7 @@ describe("Header", () => {
 			/>
 		);
 
-		expect(
-			await screen.findByLabelText("Select a category")
-		).toBeInTheDocument();
+		expect(await screen.findByText("Select a category")).toBeInTheDocument();
 	});
 
 	it("should render the correct number of categories", async () => {
@@ -41,11 +39,10 @@ describe("Header", () => {
 			/>
 		);
 
-		const dropdown = within(
-			await screen.findByTestId("category-select")
-		).getByRole("combobox");
+		const select = await screen.findByTestId("category-select");
+		const dropdown = within(select).getByRole("combobox");
 		await userEvent.click(dropdown);
-		expect(await screen.findAllByRole("option")).toHaveLength(
+		expect(await within(select).findAllByRole("option")).toHaveLength(
 			categoriesData.length
 		);
 	});
@@ -61,12 +58,13 @@ describe("Header", () => {
 				/>
 			);
 
-			const dropdown = within(
-				await screen.findByTestId("category-select")
-			).getByRole("combobox");
+			const select = await screen.findByTestId("category-select");
+			const dropdown = within(select).getByRole("combobox");
+
 			await userEvent.click(dropdown);
-			const option = await screen.findByText("shift");
-			await userEvent.click(option);
+
+			const shiftOption = await within(select).findByText("shift");
+			await userEvent.click(shiftOption);
 
 			expect(onChange).toHaveBeenCalled();
 		});

@@ -3,68 +3,95 @@
 exports[`Header should render correctly 1`] = `
 <DocumentFragment>
   <header
-    class="sc-b7847057-0 dZtOfp"
+    class="sc-748d1ee5-0 EfACe"
   >
     <h1
-      class="sc-b7847057-1 cziqCN"
+      class="sc-748d1ee5-1 ejQsuG"
     >
       Metrics
     </h1>
     <div
-      class="sc-b7847057-2 jJJInG"
+      class="sc-748d1ee5-2 atquT"
     >
-      <label
-        class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-animated css-jm0w15-MuiFormLabel-root-MuiInputLabel-root"
+      <p
+        class="sc-748d1ee5-3 fkkbPT"
         id="category-label"
       >
         Select a category
-      </label>
+      </p>
       <div
-        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary select-category css-1y0cggy-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
-        data-testid="category-select"
+        class="w-full min-w-[10rem] text-tremor-default select-category"
       >
         <div
-          aria-controls=":r0:"
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="category-label category-select"
-          class="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
-          id="category-select"
-          role="combobox"
-          tabindex="0"
+          class="relative"
         >
-          efficiency
-        </div>
-        <input
-          aria-hidden="true"
-          aria-invalid="false"
-          class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
-          tabindex="-1"
-          value="efficiency"
-        />
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
-          data-testid="ArrowDropDownIcon"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M7 10l5 5 5-5z"
-          />
-        </svg>
-        <fieldset
-          aria-hidden="true"
-          class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-        >
-          <legend
-            class="css-yjsfm1"
+          <select
+            class="h-full w-full absolute left-0 top-0 -z-10 opacity-0"
+            title="search-select-hidden"
           >
-            <span>
+            <option
+              class="hidden"
+              disabled=""
+              hidden=""
+              value=""
+            >
+              Select...
+            </option>
+            <option
+              class="hidden"
+              value="efficiency"
+            >
               efficiency
-            </span>
-          </legend>
-        </fieldset>
+            </option>
+            <option
+              class="hidden"
+              value="shift"
+            >
+              shift
+            </option>
+          </select>
+          <div
+            data-headlessui-state=""
+            data-testid="category-select"
+          >
+            <button
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              class="w-full"
+              data-headlessui-state=""
+              id="headlessui-combobox-button-:r0:"
+              tabindex="-1"
+              type="button"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-expanded="false"
+                autocomplete="off"
+                class="w-full outline-none text-left whitespace-nowrap truncate rounded-tremor-default focus:ring-2 transition duration-100 text-tremor-default pr-14 border py-2 shadow-tremor-input focus:border-tremor-brand-subtle focus:ring-tremor-brand-muted dark:shadow-dark-tremor-input dark:focus:border-dark-tremor-brand-subtle dark:focus:ring-dark-tremor-brand-muted pl-3 placeholder:text-tremor-content dark:placeholder:text-tremor-content bg-tremor-background dark:bg-dark-tremor-background hover:bg-tremor-background-muted dark:hover:bg-dark-tremor-background-muted text-tremor-content-emphasis dark:text-dark-tremor-content-emphasis border-tremor-border dark:border-dark-tremor-border"
+                data-headlessui-state=""
+                id="headlessui-combobox-input-:r1:"
+                placeholder="Select..."
+                role="combobox"
+                type="text"
+                value="efficiency"
+              />
+              <div
+                class="absolute inset-y-0 right-0 flex items-center pr-2.5"
+              >
+                <svg
+                  class="tremor-SearchSelect-arrowDownIcon flex-none h-5 w-5 !text-tremor-content-subtle !dark:text-dark-tremor-content-subtle"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </header>

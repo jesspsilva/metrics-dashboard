@@ -132,17 +132,12 @@ export default function Home() {
 	if (!data) return <p>No available data</p>;
 	if (!uniqueCategories.length) return <p>No available categories</p>;
 
-	// Event is of type any because of material ui problem: https://mui.com/material-ui/guides/typescript/#handling-value-and-event-handlers
-	const handleSelectChange = (event: any) => {
-		setSelectedCategory(event.target.value as string);
-	};
-
 	return (
 		<main>
 			<Header
 				categories={uniqueCategories}
 				selectedCategory={selectedCategory}
-				onChange={handleSelectChange}
+				onChange={(value) => setSelectedCategory(value)}
 				data-testid="table-header"
 			/>
 			<Overview data={statsData} />

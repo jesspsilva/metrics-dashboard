@@ -1,8 +1,5 @@
 import styled from "styled-components";
-import Select from "@mui/material/Select";
-import { styled as MaterialStyled } from "@mui/material/styles";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
+import { SearchSelect, SearchSelectItem } from "@tremor/react";
 
 const HeaderStyled = styled.header`
 	display: flex;
@@ -38,44 +35,22 @@ const SelectWrapper = styled.div`
 		flex-direction: column;
 		align-items: flex-start;
 	}
+
+	.select-category {
+		width: auto;
+		min-width: 300px;
+		text-transform: capitalize;
+
+		input {
+			text-transform: capitalize;
+		}
+	}
 `;
 
-const CategorySelect = MaterialStyled(Select)(() => ({
-	width: "300px",
-	padding: 0,
-	textTransform: "capitalize",
-	color: "var(--neutral-dark)",
-	fontWeight: 500,
-	boxShadow: "0 2px 2px 0 rgba(0, 0, 0, 0.02)",
-	"& fieldset": {
-		border: "1px solid var(--light-gray)",
-		top: 0,
-	},
-	"& fieldset legend": {
-		display: "none",
-	},
-	"& .MuiSelect-select": {
-		padding: "14px",
-	},
-	"&:hover fieldset": {
-		borderColor: "var(--gray) !important",
-	},
-	"&.Mui-focused fieldset": {
-		border: "1px solid var(--light-blue) !important",
-	},
-	"@media (max-width: 768px)": {
-		width: "100%",
-	},
-}));
-
-const MenuItemStyled = MaterialStyled(MenuItem)(() => ({
-	textTransform: "capitalize",
-}));
-
-const InputLabelStyled = MaterialStyled(InputLabel)(() => ({
-	color: "var(--neutral-dark)",
-	fontWeight: 500,
-}));
+const InputLabelStyled = styled.p`
+	color: var(--neutral-dark);
+	font-weight: 500;
+}`;
 
 export default function Header({
 	categories,
@@ -84,7 +59,7 @@ export default function Header({
 }: {
 	categories: string[];
 	selectedCategory: string;
-	onChange: (event: any) => void;
+	onChange: (v: string) => void;
 }) {
 	return (
 		<HeaderStyled>
@@ -93,27 +68,26 @@ export default function Header({
 				<InputLabelStyled id="category-label">
 					Select a category
 				</InputLabelStyled>
-				<CategorySelect
-					id="category-select"
-					labelId="category-label"
+				<SearchSelect
 					value={selectedCategory}
-					onChange={onChange}
-					label={selectedCategory}
+					onValueChange={(v) => onChange(v)}
 					className="select-category"
 					data-testid="category-select"
+					defaultValue={categories[0]}
+					enableClear={false}
 				>
 					{categories.map((category, index) => {
 						return (
-							<MenuItemStyled
+							<SearchSelectItem
 								key={index}
 								value={category}
 								data-testid="category-option"
 							>
 								{category}
-							</MenuItemStyled>
+							</SearchSelectItem>
 						);
 					})}
-				</CategorySelect>
+				</SearchSelect>
 			</SelectWrapper>
 		</HeaderStyled>
 	);
