@@ -9,6 +9,11 @@ export const formatNumber = (value: number, type: MetricsType): string => {
         style: "unit",
         unit: "second",
       }).format(value);
+    case "minutes":
+      return new Intl.NumberFormat("pt-PT", {
+        style: "unit",
+        unit: "minute",
+      }).format(value);
     case "hours":
       return new Intl.NumberFormat("pt-PT", {
         style: "unit",

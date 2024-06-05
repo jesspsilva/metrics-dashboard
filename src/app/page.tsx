@@ -121,9 +121,13 @@ export default function Home() {
   if (!uniqueCategories.length) return <p>No available categories</p>;
 
   const changeFilters = (value: string, type: FiltersType = "labels") => {
-    return type === "categories"
-      ? setSelectedCategory(value ? value : "All")
-      : setSelectedLabel(value);
+    if (type === "labels") {
+      setSelectedLabel(value);
+      return;
+    }
+
+    setSelectedCategory(value ? value : "All");
+    setSelectedLabel("");
   };
 
   return (
@@ -140,7 +144,7 @@ export default function Home() {
           <ChartsWrapper
             data={data}
             category={selectedCategory}
-            onChange={changeFilters}
+            onChange={(value, type) => changeFilters(String(value), type)}
           />
         </MetricsCard>
         <MetricsCard className="data-table">

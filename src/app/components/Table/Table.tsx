@@ -38,10 +38,10 @@ const TableRow = styled.tr`
     display: block;
     border: 1px solid var(--light-gray);
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.05);
+    background: var(--white);
 
     &:not(:last-of-type) {
       margin-bottom: 4rem;
-      background: var(--white);
     }
   }
 `;
