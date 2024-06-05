@@ -30,7 +30,7 @@ export default function BarChart({
   onChange: (v: string) => void;
   title?: string;
   categories: string[];
-  colors: string[];
+  colors?: string[];
 }) {
   return (
     <ChartWrapper>

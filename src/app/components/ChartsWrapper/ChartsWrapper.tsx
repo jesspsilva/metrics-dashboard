@@ -102,27 +102,33 @@ export default function ChartsWrapper({
   return (
     <>
       {category.toLowerCase() === "all" && (
-        <DonutChart
-          variant="pie"
-          data={categoryCounts}
-          colors={categoryCounts.map((item) => item.color)}
-          onChange={(value) => onChange(value, "categories")}
-          title="Categories Distribution"
-        />
+        <div data-testid="all-chart" className="chart">
+          <DonutChart
+            variant="pie"
+            data={categoryCounts}
+            colors={categoryCounts.map((item) => item.color)}
+            onChange={(value) => onChange(value, "categories")}
+            title="Categories Distribution"
+          />
+        </div>
       )}
 
       {category.toLowerCase() === "downtime" && (
-        <DonutChart
-          data={downtimeData}
-          onChange={onChange}
-          type={downtimeData[0].type}
-          title="Downtime Distribution"
-          colors={downtimeData.map((item) => item.color)}
-        />
+        <div data-testid="downtime-chart" className="chart">
+          <DonutChart
+            data={downtimeData}
+            onChange={onChange}
+            type={downtimeData[0].type}
+            title="Downtime Distribution"
+            colors={downtimeData.map((item) => item.color)}
+          />
+        </div>
       )}
-
       {category.toLowerCase() === "efficiency" && (
-        <>
+        <div
+          data-testid="efficiency-charts"
+          className="chart efficiency-charts"
+        >
           <ProgressCircle
             value={equipmentEfficiency * 100}
             title="Equipment Efficiency"
@@ -135,11 +141,10 @@ export default function ChartsWrapper({
             categories={["Loss Value"]}
             colors={[getCategoryColor("efficiency").baseColor]}
           />
-        </>
+        </div>
       )}
-
       {category.toLowerCase() === "shift" && (
-        <>
+        <div data-testid="shift-chart" className="chart">
           <DonutChart
             data={shiftChartData}
             onChange={(value) => {
@@ -154,7 +159,7 @@ export default function ChartsWrapper({
             title="Distribution of tasks during the shift"
             colors={shiftChartData.map((item) => item.color)}
           />
-        </>
+        </div>
       )}
     </>
   );

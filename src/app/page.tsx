@@ -43,10 +43,13 @@ const ChartsCard = styled.div`
   flex-direction: column;
   gap: 20px;
 
-  > div {
+  .efficiency-charts {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .chart > div {
     min-width: 390px;
 
     padding: 20px;
