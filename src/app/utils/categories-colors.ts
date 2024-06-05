@@ -1,7 +1,18 @@
-import colors from 'tailwindcss/colors';
+import colors from "tailwindcss/colors";
 
-const colorsToExclude = ['inherit', 'current', 'transparent', 'black', 'white', 'red', 'sky', 'green']
-const tailwindColors = Object.keys(colors).filter((color) => !colorsToExclude.includes(color));
+const colorsToExclude = [
+  "inherit",
+  "current",
+  "transparent",
+  "black",
+  "white",
+  "red",
+  "sky",
+  "green",
+];
+const tailwindColors = Object.keys(colors).filter(
+  (color) => !colorsToExclude.includes(color),
+);
 
 const getRandomColor = () => {
   const randomIndex = Math.floor(Math.random() * tailwindColors.length);
