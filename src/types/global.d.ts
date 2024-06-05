@@ -7,6 +7,10 @@ declare global {
 
   type StatsType = 'success' | 'danger' | 'default'
 
+  type DonutChartVariant = 'donut' | 'pie'
+
+  type FiltersType = 'categories' | 'labels'
+
   interface MetricsData {
     id: string
     label: string

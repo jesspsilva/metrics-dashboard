@@ -6,7 +6,7 @@ import { formatNumber } from "@/app/utils/format-number";
 import Table from "@components/Table/Table";
 import Header from "@components/Header/Header";
 import Overview from "@components/Overview/Overview";
-import DowntimeCharts from "@/app/components/DowntimeCharts/DowntimeCharts";
+import ChartsWrapper from "@/app/components/ChartsWrapper/ChartsWrapper";
 
 const MetricsWrapper = styled.div`
 	display: flex;
@@ -37,8 +37,9 @@ const MetricsCard = styled.div`
 	&.charts {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
-		gap: 20px;
+		justify-content: flex-start;
+		gap: 80px;
+		min-width: 390px;
 
 		padding: 40px;
 		background: var(--white);
@@ -100,19 +101,6 @@ export default function Home() {
 		[data]
 	);
 
-	const downtimeData = useMemo(
-		() =>
-			data
-				? data
-						.filter((item) => item.category === "downtime")
-						.map((item) => ({
-							name: item.label,
-							value: item.value,
-						}))
-				: [],
-		[data]
-	);
-
 	useEffect(() => {
 		fetch("/data.json")
 			.then((response) => response.json())
@@ -132,6 +120,12 @@ export default function Home() {
 	if (!data) return <p>No available data</p>;
 	if (!uniqueCategories.length) return <p>No available categories</p>;
 
+	const changeFilters = (value: string, type: FiltersType = "labels") => {
+		return type === "categories"
+			? setSelectedCategory(value ? value : "All")
+			: setSelectedLabel(value);
+	};
+
 	return (
 		<main>
 			<Header
@@ -142,15 +136,13 @@ export default function Home() {
 			/>
 			<Overview data={statsData} />
 			<MetricsWrapper>
-				{(selectedCategory.toLowerCase() === "downtime" ||
-					selectedCategory.toLowerCase() === "all") && (
-					<MetricsCard className="charts">
-						<DowntimeCharts
-							data={downtimeData}
-							onChange={(value) => setSelectedLabel(value)}
-						/>
-					</MetricsCard>
-				)}
+				<MetricsCard className="charts">
+					<ChartsWrapper
+						data={data}
+						category={selectedCategory}
+						onChange={changeFilters}
+					/>
+				</MetricsCard>
 				<MetricsCard className="data-table">
 					<Table data={filteredData} />
 					<TableFooter>

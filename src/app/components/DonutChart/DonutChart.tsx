@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { formatNumber } from "@/app/utils/format-number";
-import { DonutChart, Legend } from "@tremor/react";
+import { DonutChart as Chart, Legend } from "@tremor/react";
 
 const ChartWrapper = styled.div`
 	display: flex;
@@ -8,36 +8,53 @@ const ChartWrapper = styled.div`
 	align-items: center;
 	justify-content: center;
 	gap: 20px;
+
+	.recharts-tooltip-wrapper .text-tremor-content {
+		text-transform: capitalize;
+	}
 `;
 
 const LegendWrapper = styled(Legend)`
+	text-transform: capitalize;
+
 	div {
 		justify-content: center;
 	}
 `;
 
-export default function DowntimeCharts({
+const H2 = styled.h2`
+	font-size: 1.125rem;
+	font-weight: 500;
+`;
+
+export default function DonutChart({
 	data,
 	onChange,
+	variant = "donut",
+	type = "number",
+	title,
 }: {
 	data: ChartData[];
 	onChange: (v: string) => void;
+	variant?: DonutChartVariant;
+	colors?: string[];
+	type?: MetricsType;
+	title?: string;
 }) {
 	return (
 		<ChartWrapper>
-			<DonutChart
+			{title && <H2>{title}</H2>}
+			<Chart
 				data={data}
-				variant="donut"
+				variant={variant}
 				onValueChange={(v) => onChange(v && v.name ? v.name : "")}
-				colors={["blue-900", "blue-500"]}
 				index="name"
 				category="value"
 				className="w-80"
-				valueFormatter={(v) => formatNumber(v, "secs")}
+				valueFormatter={(value) => formatNumber(value, type)}
 			/>
 			<LegendWrapper
 				categories={data.map((item) => item.name)}
-				colors={["blue-900", "blue-500"]}
 				className="mx-auto"
 			/>
 		</ChartWrapper>
