@@ -15,6 +15,17 @@ const HeaderStyled = styled.header`
       width: 100%;
     }
   }
+
+  @media (max-width: 480px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: var(--white);
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.05);
+  }
 `;
 
 const H1 = styled.h1`
@@ -23,6 +34,10 @@ const H1 = styled.h1`
 
   @media (max-width: 768px) {
     padding: 0 0 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 0 10px;
   }
 `;
 
