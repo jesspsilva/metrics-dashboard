@@ -23,3 +23,7 @@ export const formatNumber = (value: number, type: MetricsType): string => {
       return value.toString();
   }
 };
+
+export function fromSecsToMinutes(value: number): number {
+  return Math.floor((value % 3600) / 60);
+}

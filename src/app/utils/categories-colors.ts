@@ -13,7 +13,7 @@ export const getCategoryColor = (category: string) => {
     case "efficiency":
       return {
         backgroundColor: "emerald-200",
-        border: "emerald-600",
+        border: "emerald-800",
         color: "emerald-800",
         chartColor: "emerald-400",
         baseColor: "emerald",

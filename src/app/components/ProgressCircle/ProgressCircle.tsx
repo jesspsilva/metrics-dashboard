@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ProgressCircle as Chart } from "@tremor/react";
+import { ProgressCircle as Chart, Size } from "@tremor/react";
 
 const ChartWrapper = styled.div`
   display: flex;
@@ -22,15 +22,22 @@ export default function ProgressCircle({
   value,
   title,
   color,
+  size = "xl",
 }: {
   value: number;
   title?: string;
   color: string;
+  size?: Size;
 }) {
   return (
     <ChartWrapper>
       {title && <H2>{title}</H2>}
-      <Chart value={value} size="xl" strokeWidth={14} color={color}>
+      <Chart
+        value={value}
+        size={size}
+        strokeWidth={size === "xl" ? 14 : 6}
+        color={color}
+      >
         <span className="fill-tremor-content-emphasis">{value}%</span>
       </Chart>
     </ChartWrapper>

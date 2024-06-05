@@ -92,27 +92,6 @@ export default function Home() {
     [data, selectedCategory, selectedLabel],
   );
 
-  const statsData = useMemo(
-    () =>
-      data
-        ? Object.groupBy(
-            data.map(({ label, value, type, category }) => ({
-              label,
-              value: formatNumber(value, type),
-              category,
-              statType:
-                category === "downtime"
-                  ? "danger"
-                  : type === "percentage" && value > 0.6
-                    ? "success"
-                    : "default",
-            })),
-            ({ category }) => category,
-          )
-        : ({} as StatsData),
-    [data],
-  );
-
   useEffect(() => {
     fetch("/data.json")
       .then((response) => response.json())
@@ -150,7 +129,7 @@ export default function Home() {
         onChange={(value) => changeFilters(value, "categories")}
         data-testid="table-header"
       />
-      {/* <Overview data={statsData} /> */}
+      <Overview data={data} />
       <MetricsWrapper>
         <ChartsCard>
           <ChartsWrapper

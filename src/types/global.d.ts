@@ -1,4 +1,4 @@
-export {};
+export { };
 
 declare global {
   type Category = "efficiency" | "shift" | "downtime";
@@ -18,17 +18,6 @@ declare global {
     type: MetricsType;
     description: string;
     category: Category;
-  }
-
-  interface StatsItem {
-    label: string;
-    value: string;
-    category: string;
-    statType: string;
-  }
-
-  interface StatsData {
-    [key: string]: StatsItem[];
   }
 
   interface ChartData {
