@@ -1,23 +1,23 @@
-export { }
+export {};
 
 declare global {
-  type Category = 'efficiency' | 'shift' | 'downtime'
+  type Category = "efficiency" | "shift" | "downtime";
 
-  type MetricsType = 'number' | 'percentage' | 'secs' | 'hours'
+  type MetricsType = "number" | "percentage" | "secs" | "hours";
 
-  type StatsType = 'success' | 'danger' | 'default'
+  type StatsType = "success" | "danger" | "default";
 
-  type DonutChartVariant = 'donut' | 'pie'
+  type DonutChartVariant = "donut" | "pie";
 
-  type FiltersType = 'categories' | 'labels'
+  type FiltersType = "categories" | "labels";
 
   interface MetricsData {
-    id: string
-    label: string
-    value: number
-    type: MetricsType
-    description: string
-    category: Category
+    id: string;
+    label: string;
+    value: number;
+    type: MetricsType;
+    description: string;
+    category: Category;
   }
 
   interface StatsItem {

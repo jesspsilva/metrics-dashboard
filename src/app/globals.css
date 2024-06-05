@@ -10,7 +10,7 @@
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
-  --background: #F9FAFF;
+  --background: #f9faff;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -43,19 +43,19 @@
   --card-border-rgb: 131, 134, 135;
 
   /* Colors: */
-  --gray: #B5B7C0;
-  --dark-blue: #292D32;
-  --light-gray: #EEEEEE;
-  --light-green: #16C09861;
-  --light-red: #FFC5C5;
-  --light-blue: #A5D8FF;
-  --dark-green: #0E7651;
-  --dark-red: #B54747;
-  --dark-gray: #7F8189;
+  --gray: #b5b7c0;
+  --dark-blue: #292d32;
+  --light-gray: #eeeeee;
+  --light-green: #16c09861;
+  --light-red: #ffc5c5;
+  --light-blue: #a5d8ff;
+  --dark-green: #0e7651;
+  --dark-red: #b54747;
+  --dark-gray: #7f8189;
   --white: #fff;
-  --neutral-dark: #3D3C42;
-  --success: #28A745;
-  --danger: #DC3545;
+  --neutral-dark: #3d3c42;
+  --success: #28a745;
+  --danger: #dc3545;
 }
 
 * {
@@ -74,7 +74,6 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background);
-
 }
 
 a {
