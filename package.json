@@ -14,12 +14,8 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@emotion/cache": "^11.11.0",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
     "@headlessui/react": "^2.0.4",
     "@headlessui/tailwindcss": "^0.2.1",
-    "@mui/material-nextjs": "^5.15.11",
     "@tremor/react": "^3.17.2",
     "next": "14.2.3",
     "react": "^18",
