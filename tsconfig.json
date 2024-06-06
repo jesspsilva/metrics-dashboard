@@ -27,6 +27,6 @@
   "noImplicitThis": true,
   "strictNullChecks": true,
   "typeRoots": ["./types", "./node_modules/@types"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/**/**/*.tsx"],
+  "exclude": ["node_modules", "./cypress.config.ts", "cypress"]
 }
