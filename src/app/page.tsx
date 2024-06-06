@@ -7,6 +7,7 @@ import Table from "@components/Table/Table";
 import Header from "@components/Header/Header";
 import Overview from "@components/Overview/Overview";
 import ChartsWrapper from "@/app/components/ChartsWrapper/ChartsWrapper";
+import Spinner from "@/app/components/Spinner/Spinner";
 
 const MetricsWrapper = styled.div`
   display: flex;
@@ -99,8 +100,11 @@ export default function Home() {
     fetch("/data.json")
       .then((response) => response.json())
       .then(({ data }) => {
-        setData(data);
-        setLoading(false);
+        // add a delay to simulate a slow network
+        setTimeout(() => {
+          setData(data);
+          setLoading(false);
+        }, 2000);
       });
   }, []);
 
@@ -110,7 +114,7 @@ export default function Home() {
     }
   }, [uniqueCategories]);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Spinner />;
   if (!data) return <p>No available data</p>;
   if (!uniqueCategories.length) return <p>No available categories</p>;
 
