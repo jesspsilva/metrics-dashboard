@@ -3,10 +3,10 @@
 exports[`BarChart should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-b143385c-0 jNqabe"
+    class="sc-2886c41f-0 mcNxz"
   >
     <h2
-      class="sc-b143385c-1 mKzdD"
+      class="sc-2886c41f-1 iSqthi"
     >
       Bar Chart Title
     </h2>

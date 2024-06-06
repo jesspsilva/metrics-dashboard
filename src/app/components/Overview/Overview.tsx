@@ -4,8 +4,9 @@ import { getCategoryColor } from "@/app/utils/categories-colors";
 import { filterDataByCategory } from "@/app/utils/filter-data-by-category";
 import { fromSecsToMinutes } from "@/app/utils/format-number";
 
-import { Card, Color, ProgressBar, Tracker } from "@tremor/react";
-import ProgressCircle from "@/app/components/ProgressCircle/ProgressCircle";
+import { Card, Color, Tracker } from "@tremor/react";
+import ProgressCircle from "@components/ProgressCircle/ProgressCircle";
+import ProgressBar from "@components/ProgressBar/ProgressBar";
 
 const OverviewWrapper = styled.div`
   padding: 30px 0;
@@ -88,9 +89,7 @@ export default function Overview({ data }: { data: MetricsData[] }) {
     );
   }, [downtimeData]);
 
-  const createOneHourIntervals = (
-    downtimeData: Partial<MetricsData>[],
-  ): any => {
+  const createOneHourIntervals = (): any => {
     const numIntervals = 60;
     const downtimeIntervals = Array(numIntervals).fill(0);
 
@@ -111,7 +110,7 @@ export default function Overview({ data }: { data: MetricsData[] }) {
     return intervals;
   };
 
-  const trackData = createOneHourIntervals(downtimeData);
+  const trackData = createOneHourIntervals();
 
   const downtimeCardData = useMemo(() => {
     return {
@@ -185,9 +184,8 @@ export default function Overview({ data }: { data: MetricsData[] }) {
             <span>100%</span>
           </p>
           <ProgressBar
-            value={efficiencyCardData.value as number}
+            value={efficiencyCardData.value}
             color={efficiencyCardData.chartColor as Color}
-            className="mt-3"
           />
         </div>
         <div>

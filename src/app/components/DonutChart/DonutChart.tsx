@@ -54,6 +54,7 @@ export default function DonutChart({
         className="w-80"
         valueFormatter={(value) => formatNumber(value, type)}
         colors={colors}
+        showAnimation
       />
       <LegendWrapper
         categories={data.map((item) => item.name)}

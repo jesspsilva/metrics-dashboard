@@ -43,6 +43,7 @@ export default function BarChart({
         className="mt-6"
         onValueChange={(v) => onChange(v && v.name ? String(v.name) : "")}
         colors={colors}
+        showAnimation
       />
     </ChartWrapper>
   );

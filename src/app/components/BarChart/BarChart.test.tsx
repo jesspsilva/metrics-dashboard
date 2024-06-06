@@ -11,11 +11,6 @@ jest.mock("recharts", () => ({
     .mockImplementation((props: any) => <div {...props} />),
 }));
 
-// Added this import because jest is causing an error when running the tests
-// Reference: https://github.com/ZeeCoder/use-resize-observer/issues/40
-import ResizeObserver from "resize-observer-polyfill";
-global.ResizeObserver = ResizeObserver;
-
 import BarChart from "./BarChart";
 
 const data = [
