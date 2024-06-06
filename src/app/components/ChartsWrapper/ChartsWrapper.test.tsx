@@ -2,7 +2,6 @@ import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
 import ChartsWrapper from "./ChartsWrapper";
 import { metricsData as data } from "@/app/utils/__mocks__/tests-data";
-import userEvent from "@testing-library/user-event";
 
 // Added this mock because the ResponsiveContainer component from recharts
 // is causing an error when running the tests
@@ -13,11 +12,6 @@ jest.mock("recharts", () => ({
     .fn()
     .mockImplementation((props: any) => <div {...props} />),
 }));
-
-// Added this import because jest is causing an error when running the tests
-// Reference: https://github.com/ZeeCoder/use-resize-observer/issues/40
-import ResizeObserver from "resize-observer-polyfill";
-global.ResizeObserver = ResizeObserver;
 
 const category = "efficiency";
 

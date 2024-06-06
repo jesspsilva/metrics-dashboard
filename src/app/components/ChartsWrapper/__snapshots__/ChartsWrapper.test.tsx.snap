@@ -7,10 +7,10 @@ exports[`ChartsWrapper should render correctly 1`] = `
     data-testid="efficiency-charts"
   >
     <div
-      class="sc-bc09e72-0 kPbMxn"
+      class="sc-a7bc9e45-0 jwNFCB"
     >
       <h2
-        class="sc-bc09e72-1 gDcwJS"
+        class="sc-a7bc9e45-1 hFUpbg"
       >
         Equipment Efficiency
       </h2>
@@ -41,7 +41,7 @@ exports[`ChartsWrapper should render correctly 1`] = `
             r="73"
             stroke=""
             stroke-dasharray="458.6725274241098 458.6725274241098"
-            stroke-dashoffset="146.7752087757151"
+            stroke-dashoffset="458.6725274241098"
             stroke-linecap="round"
             stroke-width="14"
           />
@@ -58,10 +58,10 @@ exports[`ChartsWrapper should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="sc-b143385c-0 jNqabe"
+      class="sc-2886c41f-0 mcNxz"
     >
       <h2
-        class="sc-b143385c-1 mKzdD"
+        class="sc-2886c41f-1 iSqthi"
       >
         Loss parameters distribution
       </h2>
