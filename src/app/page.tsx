@@ -142,7 +142,11 @@ export default function Home() {
           />
         </ChartsCard>
         <TableCard data-testid="table">
-          <Table data={filteredData} />
+          <Table
+            data={filteredData}
+            onClick={(value) => changeFilters(value, "categories")}
+            enableFiltering={selectedCategory === "All"}
+          />
           <TableFooter>
             Showing data {filteredData.length} of {data.length}
           </TableFooter>

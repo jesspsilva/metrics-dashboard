@@ -3,29 +3,29 @@
 exports[`Table should render correctly 1`] = `
 <DocumentFragment>
   <table
-    class="sc-de9c0f69-0 fQQWSd"
+    class="sc-170a4ca0-0 iLwKGa"
   >
     <thead
-      class="sc-de9c0f69-1 oYdKO"
+      class="sc-170a4ca0-1 eLlipp"
     >
       <tr>
         <th
-          class="sc-de9c0f69-2 hbnReg"
+          class="sc-170a4ca0-2 bLRPGL"
         >
           Label
         </th>
         <th
-          class="sc-de9c0f69-2 hbnReg"
+          class="sc-170a4ca0-2 bLRPGL"
         >
           Value
         </th>
         <th
-          class="sc-de9c0f69-2 hbnReg"
+          class="sc-170a4ca0-2 bLRPGL"
         >
           Description
         </th>
         <th
-          class="sc-de9c0f69-2 hbnReg"
+          class="sc-170a4ca0-2 bLRPGL"
         >
           Category
         </th>
@@ -33,28 +33,29 @@ exports[`Table should render correctly 1`] = `
     </thead>
     <tbody>
       <tr
-        class="sc-de9c0f69-3 dLMrcw"
+        class="sc-170a4ca0-3 fNdcbK"
+        data-testid="table-row"
       >
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Label"
         >
           oee
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Value"
         >
           68%
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Description"
         >
           The overall equipment efficiency in %
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Category"
         >
           <span
@@ -66,28 +67,29 @@ exports[`Table should render correctly 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-de9c0f69-3 dLMrcw"
+        class="sc-170a4ca0-3 fNdcbK"
+        data-testid="table-row"
       >
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Label"
         >
           Speed loss
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Value"
         >
           -10.5
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Description"
         >
           The line speed loss
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Category"
         >
           <span
@@ -99,28 +101,29 @@ exports[`Table should render correctly 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-de9c0f69-3 dLMrcw"
+        class="sc-170a4ca0-3 fNdcbK"
+        data-testid="table-row"
       >
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Label"
         >
           Cleaning in shift
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Value"
         >
           2280 s
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Description"
         >
           Time spent (in seconds) cleaning the machines during the last shift
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Category"
         >
           <span
@@ -132,28 +135,29 @@ exports[`Table should render correctly 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-de9c0f69-3 dLMrcw"
+        class="sc-170a4ca0-3 fNdcbK"
+        data-testid="table-row"
       >
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Label"
         >
           Shift duration
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Value"
         >
           8 h
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Description"
         >
           Last shift duration in hours
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Category"
         >
           <span
@@ -165,56 +169,58 @@ exports[`Table should render correctly 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-de9c0f69-3 dLMrcw"
+        class="sc-170a4ca0-3 fNdcbK"
+        data-testid="table-row"
       >
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Label"
         >
           -
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Value"
         >
           -
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Description"
         >
           -
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Category"
         >
           -
         </td>
       </tr>
       <tr
-        class="sc-de9c0f69-3 dLMrcw"
+        class="sc-170a4ca0-3 fNdcbK"
+        data-testid="table-row"
       >
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Label"
         >
           Unexplained downtime
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Value"
         >
           180 s
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Description"
         >
           The downtime (in seconds) caused by undocumented reasons
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Category"
         >
           <span
@@ -226,28 +232,29 @@ exports[`Table should render correctly 1`] = `
         </td>
       </tr>
       <tr
-        class="sc-de9c0f69-3 dLMrcw"
+        class="sc-170a4ca0-3 fNdcbK"
+        data-testid="table-row"
       >
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Label"
         >
           Mechanical problems
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Value"
         >
           1210 s
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Description"
         >
           The downtime (in seconds) caused by mechanical problems
         </td>
         <td
-          class="sc-de9c0f69-4 kqUsCt"
+          class="sc-170a4ca0-4 dGAcTm"
           data-label="Category"
         >
           <span

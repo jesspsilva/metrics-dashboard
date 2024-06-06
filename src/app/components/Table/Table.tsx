@@ -34,6 +34,14 @@ const TableHeader = styled.th`
 `;
 
 const TableRow = styled.tr`
+  &.filterable {
+    cursor: pointer;
+
+    &:hover {
+      background: var(--neutral-light);
+    }
+  }
+
   @media (max-width: 768px) {
     display: block;
     border: 1px solid var(--light-gray);
@@ -81,7 +89,15 @@ const TableData = styled.td`
   }
 `;
 
-export default function Table({ data }: { data: MetricsData[] }) {
+export default function Table({
+  data,
+  onClick,
+  enableFiltering = false,
+}: {
+  data: MetricsData[];
+  onClick: (item: Category) => void;
+  enableFiltering: boolean;
+}) {
   return (
     <TableWrapper>
       <TableHead>
@@ -94,7 +110,12 @@ export default function Table({ data }: { data: MetricsData[] }) {
       </TableHead>
       <tbody>
         {data.map((item) => (
-          <TableRow key={item.id}>
+          <TableRow
+            key={item.id}
+            onClick={() => (enableFiltering ? onClick(item.category) : null)}
+            className={enableFiltering ? "filterable" : ""}
+            data-testid="table-row"
+          >
             <TableData data-label="Label">
               {item.label ? item.label : "-"}
             </TableData>
