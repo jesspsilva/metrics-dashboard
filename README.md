@@ -10,7 +10,7 @@ This repository contains an experimental project exploring the integration of Ne
 - [Installation](#installation)
 - [Project structure](#project-structure)
 - [Running tests](#running-tests)
-- [screenshots](#screenshots)
+- [Screenshots](#screenshots)
 - [Screen recordings](#screen-recordings)
 - [Contributing](#contributing)
 
@@ -126,12 +126,12 @@ npm run test:watch
 
 ### Mobile
 <p float="left">
-  <img width="413" alt="mobile_1" src="https://github.com/jesspsilva/metrics-dashboard/assets/24191107/4aadfab8-160d-4338-9aa3-7f49db7934bc">
-  <img width="412" alt="mobile_2" src="https://github.com/jesspsilva/metrics-dashboard/assets/24191107/1c06f4c1-ded6-42e9-ab34-ef2b68e8e582">
+  <img width="49%" alt="mobile_1" src="https://github.com/jesspsilva/metrics-dashboard/assets/24191107/4aadfab8-160d-4338-9aa3-7f49db7934bc">
+  <img width="49%" alt="mobile_2" src="https://github.com/jesspsilva/metrics-dashboard/assets/24191107/1c06f4c1-ded6-42e9-ab34-ef2b68e8e582">
 </p>
 <p float="left">
-  <img width="414" alt="mobile_3" src="https://github.com/jesspsilva/metrics-dashboard/assets/24191107/7df4e549-7a02-4c0f-8d5f-2c6040cd22a4">
-  <img width="412" alt="mobile_4" src="https://github.com/jesspsilva/metrics-dashboard/assets/24191107/4d553256-45ca-431f-907a-ba895e840737">
+  <img width="49%" alt="mobile_3" src="https://github.com/jesspsilva/metrics-dashboard/assets/24191107/7df4e549-7a02-4c0f-8d5f-2c6040cd22a4">
+  <img width="49%" alt="mobile_4" src="https://github.com/jesspsilva/metrics-dashboard/assets/24191107/4d553256-45ca-431f-907a-ba895e840737">
 </p>
 
 ## Screen recordings
