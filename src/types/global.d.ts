@@ -1,4 +1,4 @@
-export {};
+export { };
 
 declare global {
   type Category = "efficiency" | "shift" | "downtime";
@@ -28,5 +28,13 @@ declare global {
   interface BarChartData {
     name: string;
     [key: string]: number | string;
+  }
+
+  interface StatsCard {
+    color: Color;
+    value: number;
+    chartColor: Color;
+    label: string;
+    description: string;
   }
 }
