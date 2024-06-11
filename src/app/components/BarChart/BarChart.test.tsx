@@ -13,55 +13,46 @@ jest.mock("recharts", () => ({
 
 import BarChart from "./BarChart";
 
-const data = [
-  {
-    name: "Total",
-    "% value": "10",
-  },
-  {
-    name: "Cleaning",
-    "% value": "20",
-  },
-];
+const defaultTestProps = {
+  data: [
+    {
+      name: "Total",
+      "% value": "10",
+    },
+    {
+      name: "Cleaning",
+      "% value": "20",
+    },
+  ],
+  title: "Bar Chart Title",
+  onChange: () => {},
+  categories: ["% value"],
+};
 
-const title = "Bar Chart Title";
-const categories = ["% value"];
+const renderComponent = (props = {}) => {
+  const mergedProps = { ...defaultTestProps, ...props };
+  return render(<BarChart {...mergedProps} />);
+};
 
 describe("BarChart", () => {
   it("should render correctly", () => {
-    const { asFragment } = render(
-      <BarChart
-        data={data}
-        title={title}
-        onChange={() => {}}
-        categories={categories}
-      />,
-    );
+    const { asFragment } = renderComponent();
     expect(asFragment()).toMatchSnapshot();
   });
 
   describe("when there's a title", () => {
     it("should display the title", () => {
-      const { queryByText } = render(
-        <BarChart
-          data={data}
-          title={title}
-          onChange={() => {}}
-          categories={categories}
-        />,
-      );
+      const { queryByText } = renderComponent();
 
-      expect(queryByText(title)).toBeInTheDocument();
+      expect(queryByText(defaultTestProps.title)).toBeInTheDocument();
     });
   });
 
   describe("when there's no title", () => {
     it("should not display the title", () => {
-      const { queryByText } = render(
-        <BarChart data={data} onChange={() => {}} categories={categories} />,
-      );
+      const { queryByText } = renderComponent({ title: "" });
 
-      expect(queryByText(title)).not.toBeInTheDocument();
+      expect(queryByText(defaultTestProps.title)).not.toBeInTheDocument();
     });
   });
 });

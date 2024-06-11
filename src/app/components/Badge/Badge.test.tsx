@@ -4,15 +4,24 @@ import "jest-styled-components";
 
 import Badge from "./Badge";
 
+const defaultTestProps = {
+  label: "efficiency",
+};
+
+const renderComponent = (props = {}) => {
+  const mergedProps = { ...defaultTestProps, ...props };
+  return render(<Badge {...mergedProps} />);
+};
+
 describe("Badge", () => {
   it("should render correctly", () => {
-    const { asFragment } = render(<Badge label="efficiency" />);
+    const { asFragment } = renderComponent();
     expect(asFragment()).toMatchSnapshot();
   });
 
   describe("when the label is efficiency", () => {
     it("should render the correct label and styles", async () => {
-      const { container } = render(<Badge label="efficiency" />);
+      const { container } = renderComponent();
       const badge = container.firstChild;
       expect(badge?.textContent).toBe("efficiency");
       expect(badge).toHaveClass(
@@ -23,7 +32,7 @@ describe("Badge", () => {
 
   describe("when the label is shift", () => {
     it("should render the correct label and styles", async () => {
-      const { container } = render(<Badge label="shift" />);
+      const { container } = renderComponent({ label: "shift" });
       const badge = container.firstChild;
       expect(badge?.textContent).toBe("shift");
       expect(badge).toHaveClass("bg-sky-200 border-sky-800 text-sky-800");
@@ -32,7 +41,7 @@ describe("Badge", () => {
 
   describe("when the label is downtime", () => {
     it("should render the correct label and styles", async () => {
-      const { container } = render(<Badge label="downtime" />);
+      const { container } = renderComponent({ label: "downtime" });
       const badge = container.firstChild;
       expect(badge?.textContent).toBe("downtime");
       expect(badge).toHaveClass("bg-red-200 border-red-800 text-red-800");

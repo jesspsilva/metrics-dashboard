@@ -3,60 +3,44 @@ import { render, screen, within } from "@testing-library/react";
 import Header from "./Header";
 import userEvent from "@testing-library/user-event";
 
-const categoriesData = ["efficiency", "shift"] as string[];
-const selectedCategory = categoriesData[0];
+const defaultTestProps = {
+  categories: ["efficiency", "shift"],
+  selectedCategory: "efficiency",
+  onChange: () => {},
+};
+
+const renderComponent = (props = {}) => {
+  const mergedProps = { ...defaultTestProps, ...props };
+  return render(<Header {...mergedProps} />);
+};
 
 describe("Header", () => {
   it("should render correctly", () => {
-    const { asFragment } = render(
-      <Header
-        categories={categoriesData}
-        selectedCategory={selectedCategory}
-        onChange={() => {}}
-      />,
-    );
+    const { asFragment } = renderComponent();
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("should display label", async () => {
-    render(
-      <Header
-        categories={categoriesData}
-        selectedCategory={selectedCategory}
-        onChange={() => {}}
-      />,
-    );
+    renderComponent();
 
     expect(await screen.findByText("Select a category")).toBeInTheDocument();
   });
 
   it("should render the correct number of categories", async () => {
-    render(
-      <Header
-        categories={categoriesData}
-        selectedCategory={selectedCategory}
-        onChange={() => {}}
-      />,
-    );
+    renderComponent();
 
     const select = await screen.findByTestId("category-select");
     const dropdown = within(select).getByRole("combobox");
     await userEvent.click(dropdown);
     expect(await within(select).findAllByRole("option")).toHaveLength(
-      categoriesData.length,
+      defaultTestProps.categories.length,
     );
   });
 
   describe("when selecting a category", () => {
     it("should call onChange", async () => {
       const onChange = jest.fn();
-      render(
-        <Header
-          categories={categoriesData}
-          selectedCategory={selectedCategory}
-          onChange={onChange}
-        />,
-      );
+      renderComponent({ onChange });
 
       const select = await screen.findByTestId("category-select");
       const dropdown = within(select).getByRole("combobox");

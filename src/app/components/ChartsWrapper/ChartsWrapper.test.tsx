@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import ChartsWrapper from "./ChartsWrapper";
 import { metricsData as data } from "@/app/utils/__mocks__/tests-data";
 
@@ -13,25 +13,28 @@ jest.mock("recharts", () => ({
     .mockImplementation((props: any) => <div {...props} />),
 }));
 
-const category = "efficiency";
+const defaultTestProps = {
+  data,
+  category: "efficiency",
+  onChange: () => {},
+};
+
+const renderComponent = (props = {}) => {
+  const mergedProps = { ...defaultTestProps, ...props };
+  return render(<ChartsWrapper {...mergedProps} />);
+};
 
 describe("ChartsWrapper", () => {
   it("should render correctly", () => {
-    const { asFragment } = render(
-      <ChartsWrapper data={data} category={category} onChange={() => {}} />,
-    );
+    const { asFragment } = renderComponent();
     expect(asFragment()).toMatchSnapshot();
   });
 
   describe("when the category is downtime", () => {
-    it("should render the correct downtime data", () => {
-      const { container } = render(
-        <ChartsWrapper data={data} category="downtime" onChange={() => {}} />,
-      );
+    it("should render the correct downtime data", async () => {
+      renderComponent({ category: "downtime" });
 
-      const donutChart = container.querySelector(
-        "[data-testid='downtime-chart']",
-      );
+      const donutChart = await screen.findByTestId("downtime-chart");
 
       expect(donutChart).toBeInTheDocument();
       expect(donutChart).toHaveTextContent("Downtime Distribution");
@@ -40,24 +43,20 @@ describe("ChartsWrapper", () => {
   });
 
   describe("when the category is efficiency", () => {
-    it("should render the correct efficiency data", () => {
-      const { container } = render(
-        <ChartsWrapper data={data} category="efficiency" onChange={() => {}} />,
-      );
+    it("should render the correct efficiency data", async () => {
+      renderComponent({ category: "efficiency" });
 
-      const efficiencyCharts = container.querySelector(".efficiency-charts");
+      const efficiencyCharts = await screen.findByTestId("efficiency-charts");
 
       expect(efficiencyCharts?.children).toHaveLength(2);
     });
   });
 
   describe("when the category is shift", () => {
-    it("should render the correct shift data", () => {
-      const { container } = render(
-        <ChartsWrapper data={data} category="shift" onChange={() => {}} />,
-      );
+    it("should render the correct shift data", async () => {
+      renderComponent({ category: "shift" });
 
-      const donutChart = container.querySelector("[data-testid='shift-chart']");
+      const donutChart = await screen.findByTestId("shift-chart");
 
       expect(donutChart).toBeInTheDocument();
       expect(donutChart).toHaveTextContent(
@@ -68,12 +67,10 @@ describe("ChartsWrapper", () => {
   });
 
   describe("when the category is all", () => {
-    it("should render all categories chart data", () => {
-      const { container } = render(
-        <ChartsWrapper data={data} category="all" onChange={() => {}} />,
-      );
+    it("should render all categories chart data", async () => {
+      renderComponent({ category: "All" });
 
-      const charts = container.querySelector("[data-testid='all-chart']");
+      const charts = await screen.findByTestId("all-chart");
 
       expect(charts?.children).toHaveLength(1);
     });
