@@ -116,7 +116,7 @@ export default function Overview({ data }: { data: MetricsData[] }) {
     return {
       label: "Downtime",
       color: getCategoryColor("downtime").backgroundColor,
-      description: `In the last 24 hours, there were ${totalDowntimeMinutes} minutes of downtime`,
+      description: `In the last hour, there were ${totalDowntimeMinutes} minutes of downtime`,
     };
   }, [totalDowntimeMinutes]);
 
