@@ -41,11 +41,9 @@ describe("Category Selection", () => {
   describe("when we click in the categories chart", () => {
     it("should update data when a different category is selected", () => {
       cy.visit('http://localhost:3000/');
-      // wait for the animation of the chart to finish
-      cy.wait(500);
 
       // select the efficiency category
-      cy.get("[data-testid='all-chart'] .recharts-layer g").eq(2).click();
+      cy.get("[data-testid='all-chart'] .recharts-layer g path[name='downtime']", { timeout: 10000 }).click();
 
       cy.get("[data-testid='category-select'] input").should("have.value", "downtime");
 

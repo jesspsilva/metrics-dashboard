@@ -6,10 +6,9 @@ describe("Labels Selection", () => {
       // select the efficiency category
       cy.get("[data-testid='category-select'] button").click();
       cy.get('[role="option"]').contains('efficiency').click();
-      cy.wait(1000)
 
       // click in the bar chart first label
-      cy.get("[data-testid='efficiency-charts'] .recharts-bar-rectangle").eq(1).click();
+      cy.get("[data-testid='efficiency-charts'] .recharts-bar-rectangle", { timeout: 10000 }).eq(1).click();
 
       // should update the data displayd in the table
       cy.get("[data-testid='table']").should("exist");
@@ -25,10 +24,9 @@ describe("Labels Selection", () => {
         // select the efficiency category
         cy.get("[data-testid='category-select'] button").click();
         cy.get('[role="option"]').contains('efficiency').click();
-        cy.wait(1000)
 
         // click in the bar chart first label
-        cy.get("[data-testid='efficiency-charts'] .recharts-bar-rectangle").eq(1).click();
+        cy.get("[data-testid='efficiency-charts'] .recharts-bar-rectangle", { timeout: 10000 }).eq(1).click();
 
         // click in the bar chart first label again
         cy.get("[data-testid='efficiency-charts'] .recharts-bar-rectangle").eq(1).click();
