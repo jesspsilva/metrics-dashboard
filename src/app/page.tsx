@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useMemo } from "react";
 import styled from "styled-components";
-import { formatNumber } from "@/app/utils/format-number";
+import { useFetchData } from "@/app/services/useFetchData";
 
 import Table from "@components/Table/Table";
 import Header from "@components/Header/Header";
@@ -71,15 +71,21 @@ const TableFooter = styled.footer`
 `;
 
 export default function Home() {
-  const [data, setData] = useState<MetricsData[] | null>(null);
-  const [isLoading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedLabel, setSelectedLabel] = useState<string>("");
+  const { data, isLoading } = useFetchData("/data.json");
 
   const uniqueCategories = useMemo(
     () => (data ? ["All", ...new Set(data.map((item) => item.category))] : []),
     [data],
   );
+
+  useEffect(() => {
+    if (uniqueCategories.length) {
+      setSelectedCategory(uniqueCategories[0]);
+    }
+  }, [uniqueCategories]);
+
   const filteredData = useMemo(
     () =>
       data
@@ -96,28 +102,6 @@ export default function Home() {
     [data, selectedCategory, selectedLabel],
   );
 
-  useEffect(() => {
-    fetch("/data.json")
-      .then((response) => response.json())
-      .then(({ data }) => {
-        // add a delay to simulate a slow network
-        setTimeout(() => {
-          setData(data);
-          setLoading(false);
-        }, 2000);
-      });
-  }, []);
-
-  useEffect(() => {
-    if (uniqueCategories.length) {
-      setSelectedCategory(uniqueCategories[0]);
-    }
-  }, [uniqueCategories]);
-
-  if (isLoading) return <Spinner />;
-  if (!data) return <p>No available data</p>;
-  if (!uniqueCategories.length) return <p>No available categories</p>;
-
   const changeFilters = (value: string, type: FiltersType = "labels") => {
     if (type === "labels") {
       setSelectedLabel(value);
@@ -127,6 +111,10 @@ export default function Home() {
     setSelectedCategory(value ? value : "All");
     setSelectedLabel("");
   };
+
+  if (isLoading) return <Spinner />;
+  if (!data) return <p>No available data</p>;
+  if (!uniqueCategories.length) return <p>No available categories</p>;
 
   return (
     <main>
